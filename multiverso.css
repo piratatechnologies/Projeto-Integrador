@@ -1,0 +1,92 @@
+
+.menu-header a:hover {
+    color: red;
+}
+
+
+.titulo-header {
+    text-align: center;
+    font-size: 22px;
+    padding: 10px;
+    font-family: Impact, sans-serif;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+
+html, body {
+    height: 100%;
+}
+
+.fundo-parallax {
+    position: fixed;
+    top: -50%;
+    left: 0;
+    width: 100%;
+    height: 260%;
+
+    background-image: url("fundo.png");
+    background-size: cover;
+    background-position: center;
+
+    z-index: -3;
+}
+
+
+.fundo-parallax::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+
+    z-index: -2;
+}
+
+.container-multiverso {
+    position: relative;
+    z-index: 1;
+}
+
+
+.container-multiverso { 
+    position: relative;
+    z-index: 2;
+    max-width: 1200px; 
+    margin: auto; 
+    padding: 40px 0; 
+}
+.painel-universo { 
+    margin-bottom: 60px; 
+    transition: 0.3s; 
+}
+.painel-universo img { 
+    width: 100%; 
+    height: 500px; 
+    object-fit: cover; 
+    border: 3px solid rgb(255, 0, 0); 
+}
+.painel-universo:hover { 
+    transform: scale(1.03); 
+}
+
+.nome-universo { 
+    text-align: center; 
+    font-size: 30px; 
+    font-weight: bold; 
+    color: rgb(255, 0, 0); 
+    margin-top: 10px; 
+    font-family: Impact, sans-serif; 
+    text-shadow: 
+    -2px -2px 0 black, 
+     2px -2px 0 black, 
+     -2px 2px 0 black, 
+     2px 2px 0 black, 
+     -3px 0px 0 black, 
+     3px 0px 0 black, 
+     0px -3px 0 black, 
+     0px 3px 0 black; 
+}

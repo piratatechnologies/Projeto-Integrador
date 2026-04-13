@@ -1,0 +1,29 @@
+body {
+    background-color: #b83939 !important;
+}
+.card-img-top {
+    
+    height: 350px;
+    width: 10px;       
+       
+}
+
+.card-body {
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body .btn {
+    margin-top: auto;
+}
+
+.card-title {
+    height: 56px;   
+}
+
+
+.modal-body img {
+    height: 500px;
+    object-fit: contain; 
+}
