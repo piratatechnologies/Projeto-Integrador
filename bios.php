@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -26,6 +30,35 @@
             <nav class="mt-3">
         </td>
     </tr>
+
+    <div style="position:absolute; right:20px; top:20px;">
+
+<?php if (!isset($_SESSION['user'])): ?>
+
+    <a href="login.php" class="btn btn-light btn-sm">Login</a>
+    <a href="cadastro.php" class="btn btn-warning btn-sm">Cadastro</a>
+
+<?php else: ?>
+
+    <?php if ($_SESSION['user']['tipo'] == 'admin'): ?>
+        <img src="admin.png" width="25">
+    <?php else: ?>
+        <img src="user.png" width="25">
+    <?php endif; ?>
+
+    <span style="color:white; margin: 0 10px;">
+        <?= $_SESSION['user']['username'] ?>
+    </span>
+
+    <?php if ($_SESSION['user']['tipo'] == 'admin'): ?>
+        <a href="dashboard.php" class="btn btn-warning btn-sm">Dashboard</a>
+    <?php endif; ?>
+
+    <a href="logout.php" class="btn btn-danger btn-sm">Sair</a>
+
+<?php endif; ?>
+
+</div>
 
     <tr>
         <td style="text-align: center; font-size: 30px; padding: 10px;">

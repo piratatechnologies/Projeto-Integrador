@@ -16,6 +16,8 @@ session_start();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
 </head>
 
+
+
 <body>
 
     <div class="barra-esquerda"></div>
@@ -38,9 +40,9 @@ session_start();
 <?php else: ?>
 
     <?php if ($_SESSION['user']['tipo'] == 'admin'): ?>
-        <img src="img/admin.png" width="25">
+        <img src="admin.png" width="25">
     <?php else: ?>
-        <img src="img/user.png" width="25">
+        <img src="user.png" width="25">
     <?php endif; ?>
 
     <span style="color:white; margin: 0 10px;">

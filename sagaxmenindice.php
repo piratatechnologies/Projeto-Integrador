@@ -1,5 +1,6 @@
-<?php?>
-
+<?php
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -61,7 +62,7 @@
 
             
             <div class="col-md-6 mb-4">
-                <a href="sagasprevingadores.html" class="vingadores-link">
+                <a href="sagas_fase.php?fase=primeira classe&universo=xmen" class="vingadores-link">
                     <div class="vingadores-card" style="background-image: url('sagasbanner/sagaxprime.jpg');">
                         <div class="overlay">
                             <h1>PRIMEIRA CLASSE</h1>

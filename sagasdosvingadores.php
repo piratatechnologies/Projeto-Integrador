@@ -1,4 +1,6 @@
-<?php?>
+<?php
+session_start();
+?>
 
 
 
@@ -64,7 +66,7 @@
 
             
             <div class="col-md-6 mb-4">
-                <a href="sagasprevingadores.html" class="vingadores-link">
+                <a href="sagasprevingadores.php" class="vingadores-link">
                     <div class="vingadores-card" style="background-image: url('sagasbanner/sagapre.jpg');">
                         <div class="overlay">
                             <h1>PRÉ FORMAÇÃO</h1>
@@ -75,7 +77,7 @@
 
            
             <div class="col-md-6 mb-4">
-                <a href="sagasposvingadores.html" class="vingadores-link">
+                <a href="sagasposvingadores.php" class="vingadores-link">
                     <div class="vingadores-card" style="background-image: url('sagasbanner/sagapos.jpg');">
                         <div class="overlay">
                             <h1>PÓS FORMAÇÃO</h1>
@@ -85,7 +87,7 @@
             </div>
 
             <div class="col-md-6 mb-4">
-                <a href="sagavmod.html" class="vingadores-link">
+                <a href="sagaclassica.php" class="vingadores-link">
                     <div class="vingadores-card" style="background-image: url('sagasbanner/sagaclassica.webp');">
                         <div class="overlay">
                             <h1>ERA CLASSICA</h1>
@@ -95,7 +97,7 @@
             </div>
 
             <div class="col-md-6 mb-4">
-                <a href="sagavmod.html" class="vingadores-link">
+                <a href="sagaqueda.html" class="vingadores-link">
                     <div class="vingadores-card" style="background-image: url('sagasbanner/sagaqueda.jpg');">
                         <div class="overlay">
                             <h1>A QUEDA</h1>
@@ -105,7 +107,7 @@
             </div>
 
             <div class="col-md-6 mb-4">
-                <a href="sagavmod.html" class="vingadores-link">
+                <a href="sagaguerrassecretas.php" class="vingadores-link">
                     <div class="vingadores-card" style="background-image: url('sagasbanner/sagaguerra.jpeg');">
                         <div class="overlay">
                             <h1>GUERRAS SECRETAS</h1>
@@ -115,7 +117,7 @@
             </div>
 
             <div class="col-md-6 mb-4">
-                <a href="sagaallnew.html" class="vingadores-link">
+                <a href="sagaallnew.php" class="vingadores-link">
                     <div class="vingadores-card" style="background-image: url('sagasbanner/sagaallnew.jpg');">
                         <div class="overlay">
                             <h1>NOVA MARVEL</h1>

@@ -1,9 +1,7 @@
 <?php
 
-
 $fase = $_GET['fase'] ?? '';
 $universo = $_GET['universo'] ?? '';
-
 
 $css = "default.css"; 
 
@@ -17,7 +15,6 @@ if ($universo == "homem-aranha") {
     $css = "sagafantastico.css";
 }
 
-
 try {
     $db = new PDO("sqlite:banco.db");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -25,8 +22,6 @@ try {
     echo "Erro na conexão: " . $e->getMessage();
     exit();
 }
-$fase = $_GET['fase'] ?? '';
-$universo = $_GET['universo'] ?? '';
 
 $stmt = $db->prepare("
     SELECT * FROM quadrinhos 
@@ -42,7 +37,7 @@ $quadrinhos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html lang="pt-br">
 
 <head>
-     <link rel="stylesheet" href="<?php echo $css; ?>">
+    <link rel="stylesheet" href="<?php echo $css; ?>">
     <meta charset="UTF-8">
     <title><?= strtoupper($fase) ?></title>
 
@@ -78,26 +73,24 @@ $quadrinhos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <?php foreach ($quadrinhos as $q): 
 
-            
-            if ($q['universo'] == "Homem-Aranha") {
+            $universoDB = strtolower($q['universo']);
+
+            if ($universoDB == "homem-aranha") {
                 $pasta = "spider";
-                $prefixo = "spiderman";
-            } elseif ($q['universo'] == "Vingadores") {
+            } elseif ($universoDB == "vingadores") {
                 $pasta = "vingadores";
-                $prefixo = "avengers";
-            } elseif ($q['universo'] == "X-Men") {
-                $pasta = "xmen";
-                $prefixo = "xmen";
-            } elseif ($q['universo'] == "Quarteto Fantástico") {
+            } elseif ($universoDB == "xmen") {
+                $pasta = "sagaxmen";
+            } elseif ($universoDB == "quarteto fantástico") {
                 $pasta = "fantastico";
-                $prefixo = "fantastico";
             } else {
                 $pasta = "outros";
-                $prefixo = "img";
             }
 
             
-            $imagem = $pasta . "/" . $prefixo . $q['id'] . ".jpg";
+            $imagem = $pasta . "/" . $q['imagem'];
+
+            
         ?>
 
         <div class="col-md-3">
