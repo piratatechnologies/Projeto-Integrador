@@ -30,10 +30,40 @@ session_start();
             </tr>
 
             <div style="position:absolute; right:20px; top:20px;">
-            <a href="login.php" class="btn btn-light btn-sm">Login</a>
-            <a href="cadastro.php" class="btn btn-danger btn-sm">Cadastro</a>
-            </div>
 
+            <?php if (!isset($_SESSION['user'])): ?>
+
+    <a href="login.php" class="btn btn-light btn-sm">Login</a>
+    <a href="cadastro.php" class="btn btn-warning btn-sm">Cadastro</a>
+
+<?php else: ?>
+
+    <?php if ($_SESSION['user']['tipo'] == 'admin'): ?>
+        <img src="admin.png" width="25">
+    <?php else: ?>
+        <img src="user.png" width="25">
+    <?php endif; ?>
+
+    <span style="color:white; margin: 0 10px;">
+        <?= $_SESSION['user']['username'] ?>
+    </span>
+
+    <?php if ($_SESSION['user']['tipo'] == 'admin'): ?>
+        <a href="dashboard.php" class="btn btn-warning btn-sm">Dashboard</a>
+
+        <?php else: ?>
+
+        <a href="lidos.php" class="btn btn-primary btn-sm">
+            Quadrinhos Lidos
+        </a>
+
+    <?php endif; ?>
+
+    <a href="logout.php" class="btn btn-danger btn-sm">
+        Sair
+    </a>
+
+<?php endif; ?>
             <tr>
                 <td style="text-align: center; font-size: 30px; padding: 10px;">
                     Blog Marvel Comics Senac
@@ -58,7 +88,7 @@ session_start();
 
        
         <div class="col-md-6 mb-4">
-            <a href="sagas_fase.php?fase=origem&universo=homem-aranha" class="vingadores-link">
+            <a href="sagas_fase.php?fase=ORIGEM&universo=homem-aranha" class="vingadores-link">
                 <div class="vingadores-card" style="background-image: url('sagasbanner/sagaaranhaor.jpg');">
                     <div class="overlay">
                         <h1>ORIGEM</h1>
@@ -69,7 +99,7 @@ session_start();
 
         
         <div class="col-md-6 mb-4">
-            <a href="sagas_fase.php?fase=espetacular&universo=homem-aranha" class="vingadores-link">
+            <a href="sagas_fase.php?fase=ESPETACULAR&universo=homem-aranha" class="vingadores-link">
                 <div class="vingadores-card" style="background-image: url('sagasbanner/sagaaranhaespe.jpg');">
                     <div class="overlay">
                         <h1>ESPETACULAR</h1>
@@ -80,7 +110,7 @@ session_start();
 
         
         <div class="col-md-6 mb-4">
-            <a href="sagas_fase.php?fase=symbiote&universo=homem-aranha" class="vingadores-link">
+            <a href="sagas_fase.php?fase=SYMBIOTE&universo=homem-aranha" class="vingadores-link">
                 <div class="vingadores-card" style="background-image: url('sagasbanner/sagaaranhasim.png');">
                     <div class="overlay">
                         <h1>SYMBIOTE</h1>
@@ -89,9 +119,18 @@ session_start();
             </a>
         </div>
 
-        
         <div class="col-md-6 mb-4">
-            <a href="sagas_fase.php?fase=clone&universo=homem-aranha" class="vingadores-link">
+            <a href="sagas_fase.php?fase=2099&universo=homem-aranha" class="vingadores-link">
+                <div class="vingadores-card" style="background-image: url('sagasbanner/saga2099.jpg');">
+                    <div class="overlay">
+                        <h1>2099</h1>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <a href="sagas_fase.php?fase=SAGA DO CLONE&universo=homem-aranha" class="vingadores-link">
                 <div class="vingadores-card" style="background-image: url('sagasbanner/sagaaranhaclone.jpg');">
                     <div class="overlay">
                         <h1>SAGA DO CLONE</h1>
@@ -102,7 +141,7 @@ session_start();
 
         
         <div class="col-md-6 mb-4">
-            <a href="sagas_fase.php?fase=novo_dia&universo=homem-aranha" class="vingadores-link">
+            <a href="sagas_fase.php?fase=UM NOVO DIA&universo=homem-aranha" class="vingadores-link">
                 <div class="vingadores-card" style="background-image: url('sagasbanner/sagaaranhanovo.webp');">
                     <div class="overlay">
                         <h1>UM NOVO DIA</h1>
@@ -111,9 +150,19 @@ session_start();
             </a>
         </div>
 
-        
         <div class="col-md-6 mb-4">
-            <a href="sagas_fase.php?fase=aranhaverso&universo=homem-aranha" class="vingadores-link">
+            <a href="sagas_fase.php?fase=SUPERIOR&universo=homem-aranha" class="vingadores-link">
+                <div class="vingadores-card" style="background-image: url('sagasbanner/sagasuperior.avif');">
+                    <div class="overlay">
+                        <h1>SUPERIOR</h1>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+        <div class="col-md-6 mb-4">
+            <a href="sagas_fase.php?fase=ARANHAVERSO&universo=homem-aranha" class="vingadores-link">
                 <div class="vingadores-card" style="background-image: url('sagasbanner/sagaaranhaverso.jpg');">
                     <div class="overlay">
                         <h1>ARANHAVERSO</h1>
@@ -122,6 +171,7 @@ session_start();
             </a>
         </div>
 
+        
     </div>
 </div>
 

@@ -11,7 +11,13 @@ if ($universo == "homem-aranha") {
     $css = "sagavingadores.css";
 } elseif ($universo == "xmen") {
     $css = "sagaxmen.css";
-} elseif ($universo == "quarteto4") {
+} elseif ($universo == "Quarteto Fantástico") {
+    $css = "sagafantastico.css";
+}elseif ($universo == "Paladinos Marvel") {
+    $css = "sagapaladinos.css";
+}elseif ($universo == "quarteto4") {
+    $css = "sagafantastico.css";
+}elseif ($universo == "quarteto4") {
     $css = "sagafantastico.css";
 }
 
@@ -62,9 +68,9 @@ $quadrinhos = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <h2 style="color:white; margin-top:15px;">
-        <?= strtoupper($universo) ?> - <?= strtoupper($fase) ?>
-    </h2>
-
+    <?= mb_strtoupper($universo, 'UTF-8') ?>
+    -
+    <?= mb_strtoupper($fase, 'UTF-8') ?></h2>
 </header>
 
 <div class="container mt-5 mb-5">
@@ -78,11 +84,13 @@ $quadrinhos = $stmt->fetchAll(PDO::FETCH_ASSOC);
             if ($universoDB == "homem-aranha") {
                 $pasta = "spider";
             } elseif ($universoDB == "vingadores") {
-                $pasta = "vingadores";
+                $pasta = "sagavingadores";
             } elseif ($universoDB == "xmen") {
                 $pasta = "sagaxmen";
             } elseif ($universoDB == "quarteto fantástico") {
-                $pasta = "fantastico";
+                $pasta = "sagaquarteto";
+            } elseif ($universoDB == "paladinos marvel") {
+                $pasta = "sagapaladinos";    
             } else {
                 $pasta = "outros";
             }
@@ -104,7 +112,7 @@ $quadrinhos = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <h5><?= $q['titulo'] ?></h5>
 
                     <a href="detalhe.php?id=<?= $q['id'] ?>" class="btn btn-primary">
-                        Ver detalhes
+                        Detalhes
                     </a>
                 </div>
 

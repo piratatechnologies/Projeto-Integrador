@@ -52,9 +52,18 @@ session_start();
 
     <?php if ($_SESSION['user']['tipo'] == 'admin'): ?>
         <a href="dashboard.php" class="btn btn-warning btn-sm">Dashboard</a>
+
+        <?php else: ?>
+
+        <a href="lidos.php" class="btn btn-primary btn-sm">
+            Quadrinhos Lidos
+        </a>
+
     <?php endif; ?>
 
-    <a href="logout.php" class="btn btn-danger btn-sm">Sair</a>
+    <a href="logout.php" class="btn btn-danger btn-sm">
+        Sair
+    </a>
 
 <?php endif; ?>
 
@@ -82,7 +91,7 @@ session_start();
     
     <section class="jumbotron text-center">
         <div class="container">
-            <h1 class="jumbotron-heading">Bios dos principais Personagens do Universo Marvel</h1>
+            <h1 class="jumbotron-heading">Bios dos principais heróis e vilões do Universo Marvel</h1>
             <p class="lead text-muted">Selecione um personagem para ver sua biografia</p>
         </div>
     </section>
@@ -97,29 +106,29 @@ session_start();
                     <div class="card-body">
                         <h5>Homem-Aranha</h5>
                         <p class="text-muted">Herói</p>
-                        <a href="spiderman.html" class="btn btn-outline-danger btn-sm">Ver Bio</a>
+                        <a href="bios/spiderman.php" class="btn btn-outline-danger btn-sm">Ver Bio</a>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-3 mb-4">
                 <div class="card shadow-sm text-center">
-                    <img src="biofotos/ironmanicon.png" class="card-img-top personagem-img" alt="Ironman">
+                    <img src="biofotos/ironmanicon.png" class="card-img-top personagem-img" alt="homem-de-ferro">
                     <div class="card-body">
                         <h5>Homem de Ferro</h5>
                         <p class="text-muted">Herói</p>
-                        <a href="ironman.html" class="btn btn-outline-danger btn-sm">Ver Bio</a>
+                        <a href="bios/ironman.php" class="btn btn-outline-danger btn-sm">Ver Bio</a>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-3 mb-4">
                 <div class="card shadow-sm text-center">
-                    <img src="biofotos/captainicon.png" class="card-img-top personagem-img" alt="captain">
+                    <img src="biofotos/captainicon.png" class="card-img-top personagem-img" alt="capitão">
                     <div class="card-body">
                         <h5>Capitão América</h5>
                         <p class="text-muted">Herói</p>
-                        <a href="captain.html" class="btn btn-outline-danger btn-sm">Ver Bio</a>
+                        <a href="bios/captain.php" class="btn btn-outline-danger btn-sm">Ver Bio</a>
                     </div>
                 </div>
             </div>
@@ -130,7 +139,7 @@ session_start();
                     <div class="card-body">
                         <h5>Thor</h5>
                         <p class="text-muted">Herói</p>
-                        <a href="thor.html" class="btn btn-outline-danger btn-sm">Ver Bio</a>
+                        <a href="bios/thor.php" class="btn btn-outline-danger btn-sm">Ver Bio</a>
                     </div>
                 </div>
             </div>
@@ -141,41 +150,176 @@ session_start();
                     <div class="card-body">
                         <h5>Hulk</h5>
                         <p class="text-muted">Herói</p>
-                        <a href="hulk.html" class="btn btn-outline-danger btn-sm">Ver Bio</a>
+                        <a href="bios/hulk.php" class="btn btn-outline-danger btn-sm">Ver Bio</a>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-3 mb-4"><div class="card shadow-sm text-center"><img src="biofotos/viuvaicon.png" class="card-img-top personagem-img" alt="hulk"><div class="card-body"><h5>Viúva Negra</h5><p class="text-muted">Heróina</p><a href="viuva.html" class="btn btn-outline-danger btn-sm">Ver Bio</a></div></div></div>
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm text-center">
+                    <img src="biofotos/viuvaicon.png" class="card-img-top personagem-img" alt="viuva">
+                    <div class="card-body">
+                        <h5>Viúva Negra</h5>
+                        <p class="text-muted">Heróina</p>
+                        <a href="bios/viuva.php" class="btn btn-outline-danger btn-sm">Ver Bio</a>
+                    </div>
+                </div>
+            </div>
 
-            <div class="col-md-3 mb-4"><div class="card shadow-sm text-center"><img src="biofotos/arqueiroicon.png" class="card-img-top personagem-img" alt="hulk"><div class="card-body"><h5>Gavião Arqueiro</h5><p class="text-muted">Herói</p><a href="arqueiro.html" class="btn btn-outline-danger btn-sm">Ver Bio</a></div></div></div>
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm text-center">
+                    <img src="biofotos/arqueiroicon.png" class="card-img-top personagem-img" alt="arqueiro">
+                    <div class="card-body">
+                        <h5>Gavião Arqueiro</h5>
+                        <p class="text-muted">Herói</p>
+                        <a href="bios/arqueiro.php" class="btn btn-outline-danger btn-sm">Ver Bio</a>
+                    </div>
+                </div>
+            </div>
 
-            <div class="col-md-3 mb-4"><div class="card shadow-sm text-center"><img src="biofotos/estranhoicon.png" class="card-img-top personagem-img" alt="hulk"><div class="card-body"><h5>Doutor Estranho</h5><p class="text-muted">Herói</p><a href="estranho.html" class="btn btn-outline-danger btn-sm">Ver Bio</a></div></div></div>
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm text-center">
+                    <img src="biofotos/estranhoicon.png" class="card-img-top personagem-img" alt="estranho">
+                    <div class="card-body">
+                        <h5>Doutor Estranho</h5>
+                        <p class="text-muted">Herói</p>
+                        <a href="bios/estranho.php" class="btn btn-outline-danger btn-sm">Ver Bio</a>
+                    </div>
+                </div>
+            </div>
 
-            <div class="col-md-3 mb-4"><div class="card shadow-sm text-center"><img src="biofotos/panteraicon.png" class="card-img-top personagem-img" alt="hulk"><div class="card-body"><h5>Pantera Negra</h5><p class="text-muted">Herói</p><a href="pantera.html" class="btn btn-outline-danger btn-sm">Ver Bio</a></div></div></div>
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm text-center">
+                    <img src="biofotos/panteraicon.png" class="card-img-top personagem-img" alt="pantera">
+                    <div class="card-body">
+                        <h5>Pantera Negra</h5>
+                        <p class="text-muted">Herói</p>
+                        <a href="bios/pantera.php" class="btn btn-outline-danger btn-sm">Ver Bio</a>
+                    </div>
+                </div>
+            </div>
 
-            <div class="col-md-3 mb-4"><div class="card shadow-sm text-center"><img src="biofotos/feiticeiraicon.png" class="card-img-top personagem-img" alt="hulk"><div class="card-body"><h5>Feiticeira Escarlate</h5><p class="text-muted">Heroína</p><a href="feiticeira.html" class="btn btn-outline-danger btn-sm">Ver Bio</a></div></div></div>
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm text-center">
+                    <img src="biofotos/feiticeiraicon.png" class="card-img-top personagem-img" alt="feiticeira">
+                    <div class="card-body">
+                        <h5>Feiticeira Escarlate</h5>
+                        <p class="text-muted">Heroína</p>
+                        <a href="bios/feiticeira.php" class="btn btn-outline-danger btn-sm">Ver Bio</a>
+                    </div>
+                </div>
+            </div>
 
-            <div class="col-md-3 mb-4"><div class="card shadow-sm text-center"><img src="biofotos/thanosicon.png" class="card-img-top personagem-img" alt="hulk"><div class="card-body"><h5>Thanos</h5><p class="text-muted">Vilão</p><a href="thanos.html" class="btn btn-outline-dark btn-sm">Ver Bio</a></div></div></div>
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm text-center">
+                    <img src="biofotos/thanosicon.png" class="card-img-top personagem-img" alt="thanos">
+                    <div class="card-body">
+                        <h5>Thanos</h5>
+                        <p class="text-muted">Vilão</p>
+                        <a href="bios/thanos.php" class="btn btn-outline-dark btn-sm">Ver Bio</a>
+                    </div>
+                </div>
+            </div>
 
-            <div class="col-md-3 mb-4"><div class="card shadow-sm text-center"><img src="biofotos/lokiicon.png" class="card-img-top personagem-img" alt="hulk"><div class="card-body"><h5>Loki</h5><p class="text-muted">Vilão</p><a href="loki.html" class="btn btn-outline-dark btn-sm">Ver Bio</a></div></div></div>
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm text-center">
+                    <img src="biofotos/lokiicon.png" class="card-img-top personagem-img" alt="loki">
+                    <div class="card-body">
+                        <h5>Loki</h5>
+                        <p class="text-muted">Vilão</p>
+                        <a href="bios/loki.php" class="btn btn-outline-dark btn-sm">Ver Bio</a>
+                    </div>
+                </div>
+            </div>
 
-            <div class="col-md-3 mb-4"><div class="card shadow-sm text-center"><img src="biofotos/ultronicon2.png" class="card-img-top personagem-img" alt="hulk"><div class="card-body"><h5>Ultron</h5><p class="text-muted">Vilão</p><a href="ultron.html" class="btn btn-outline-dark btn-sm">Ver Bio</a></div></div></div>
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm text-center">
+                    <img src="biofotos/ultronicon2.png" class="card-img-top personagem-img" alt="ultron">
+                    <div class="card-body">
+                        <h5>Ultron</h5>
+                        <p class="text-muted">Vilão</p>
+                    <a href="bios/ultron.php" class="btn btn-outline-dark btn-sm">Ver Bio</a>
+                </div>
+            </div>
+        </div>
 
-            <div class="col-md-3 mb-4"><div class="card shadow-sm text-center"><img src="biofotos/destinoicon.png" class="card-img-top personagem-img" alt="hulk"><div class="card-body"><h5>Doutor Destino</h5><p class="text-muted">Vilão</p><a href="destino.html" class="btn btn-outline-dark btn-sm">Ver Bio</a></div></div></div>
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm text-center">
+                    <img src="biofotos/destinoicon.png" class="card-img-top personagem-img" alt="destino">
+                    <div class="card-body">
+                        <h5>Doutor Destino</h5>
+                        <p class="text-muted">Vilão</p>
+                        <a href="bios/destino.php" class="btn btn-outline-dark btn-sm">Ver Bio</a>
+                    </div>
+                </div>
+            </div>
 
-            <div class="col-md-3 mb-4"><div class="card shadow-sm text-center"><img src="biofotos/duendeicon.png" class="card-img-top personagem-img" alt="hulk"><div class="card-body"><h5>Duende Verde</h5><p class="text-muted">Vilão</p><a href="duende.html" class="btn btn-outline-dark btn-sm">Ver Bio</a></div></div></div>
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm text-center">
+                    <img src="biofotos/duendeicon.png" class="card-img-top personagem-img" alt="duende">
+                    <div class="card-body">
+                        <h5>Duende Verde</h5>
+                        <p class="text-muted">Vilão</p>
+                        <a href="bios/duende.php" class="btn btn-outline-dark btn-sm">Ver Bio</a>
+                    </div>
+                </div>
+            </div>
 
            
-            <div class="col-md-3 mb-4"><div class="card shadow-sm text-center"><img src="biofotos/deadpoolicon.png" class="card-img-top personagem-img" alt="hulk"><div class="card-body"><h5>Deadpool</h5><p class="text-muted">Anti-herói</p><a href="deadpool.html" class="btn btn-outline-danger btn-sm">Ver Bio</a></div></div></div>
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm text-center">
+                    <img src="biofotos/deadpoolicon.png" class="card-img-top personagem-img" alt="deadpool">
+                    <div class="card-body">
+                        <h5>Deadpool</h5>
+                        <p class="text-muted">Anti-herói</p>
+                        <a href="bios/deadpool.php" class="btn btn-outline-danger btn-sm">Ver Bio</a>
+                    </div>
+                </div>
+            </div>
 
-            <div class="col-md-3 mb-4"><div class="card shadow-sm text-center"><img src="biofotos/wolverineicon.png" class="card-img-top personagem-img" alt="Wolverine"><div class="card-body"><h5>Wolverine</h5><p class="text-muted">Herói</p><a href="wolverine.html" class="btn btn-outline-danger btn-sm">Ver Bio</a></div></div></div>
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm text-center">
+                    <img src="biofotos/wolverineicon.png" class="card-img-top personagem-img" alt="Wolverine">
+                    <div class="card-body">
+                        <h5>Wolverine</h5>
+                        <p class="text-muted">Herói</p>
+                        <a href="bios/wolverine.php" class="btn btn-outline-danger btn-sm">Ver Bio</a>
+                </div>
+            </div>
+        </div>
 
-            <div class="col-md-3 mb-4"><div class="card shadow-sm text-center"><img src="biofotos/magnetoicon2.png" class="card-img-top personagem-img" alt="hulk"><div class="card-body"><h5>Magneto</h5><p class="text-muted">Vilão</p><a href="magneto.html" class="btn btn-outline-dark btn-sm">Ver Bio</a></div></div></div>
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm text-center">
+                    <img src="biofotos/magnetoicon2.png" class="card-img-top personagem-img" alt="magneto">
+                    <div class="card-body">
+                        <h5>Magneto</h5>
+                        <p class="text-muted">Vilão</p>
+                        <a href="bios/magneto.php" class="btn btn-outline-dark btn-sm">Ver Bio</a>
+                    </div>
+                </div>
+            </div>
 
-            <div class="col-md-3 mb-4"><div class="card shadow-sm text-center"><img src="biofotos/venomicon2.png" class="card-img-top personagem-img" alt="hulk"><div class="card-body"><h5>Venom</h5><p class="text-muted">Anti-herói</p><a href="venom.html" class="btn btn-outline-dark btn-sm">Ver Bio</a></div></div></div>
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm text-center">
+                    <img src="biofotos/venomicon2.png" class="card-img-top personagem-img" alt="venom">
+                    <div class="card-body">
+                        <h5>Venom</h5>
+                        <p class="text-muted">Anti-herói</p>
+                        <a href="bios/venom.php" class="btn btn-outline-dark btn-sm">Ver Bio</a>
+                    </div>
+                </div>
+            </div>
             
-            <div class="col-md-3 mb-4"><div class="card shadow-sm text-center"><img src="biofotos/justiceiroicon2.png" class="card-img-top personagem-img" alt="hulk"><div class="card-body"><h5>Justiceiro</h5><p class="text-muted">Anti-herói</p><a href="justiceiro.html" class="btn btn-outline-dark btn-sm">Ver Bio</a></div></div></div>
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm text-center">
+                    <img src="biofotos/justiceiroicon2.png" class="card-img-top personagem-img" alt="justiceiro">
+                    <div class="card-body">
+                        <h5>Justiceiro</h5>
+                        <p class="text-muted">Anti-herói</p>
+                        <a href="bios/justiceiro.php" class="btn btn-outline-dark btn-sm">Ver Bio</a>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>

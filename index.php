@@ -51,9 +51,18 @@ session_start();
 
     <?php if ($_SESSION['user']['tipo'] == 'admin'): ?>
         <a href="dashboard.php" class="btn btn-warning btn-sm">Dashboard</a>
+
+        <?php else: ?>
+
+        <a href="lidos.php" class="btn btn-primary btn-sm">
+            Quadrinhos Lidos
+        </a>
+
     <?php endif; ?>
 
-    <a href="logout.php" class="btn btn-danger btn-sm">Sair</a>
+    <a href="logout.php" class="btn btn-danger btn-sm">
+        Sair
+    </a>
 
 <?php endif; ?>
 
@@ -88,16 +97,16 @@ session_start();
         <div class="carousel-item active">
             <img src="menuslide/marvel-123337.jpg" width="100%">
             <div class="overlay-center">
-                <h1 class="titulo-hq">ENTRE NO UNIVERSO MARVEL</h1>
-                <a href="#" class="btn btn-danger">Explorar</a>
+                <h1 class="titulo-hq">GUIA DE LEITURA</h1>
+                <a href="sagas.php" class="btn btn-danger">Explorar</a>
             </div>
         </div>
 
         <div class="carousel-item">
             <img src="menuslide/menuslide.jpeg" width="100%">
             <div class="overlay-center">
-                <h1 class="titulo-hq">ENTRE NO UNIVERSO MARVEL</h1>
-                <a href="#" class="btn btn-danger">Explorar</a>
+                <h1 class="titulo-hq">EXPLORE O MULTIVERSO</h1>
+                <a href="multiverso.php" class="btn btn-danger">Explorar</a>
             </div>
         </div>
 
@@ -105,8 +114,8 @@ session_start();
         <div class="carousel-item">
             <img src="menuslide/menuslide2.jpg" width="100%">
             <div class="overlay-center">
-                <h1 class="titulo-hq">ENTRE NO UNIVERSO MARVEL</h1>
-                <a href="#" class="btn btn-danger">Explorar</a>
+                <h1 class="titulo-hq">CONHEÇA OS HEROIS E VILÕES</h1>
+                <a href="bios.php" class="btn btn-danger">Explorar</a>
             </div>
         </div>
 

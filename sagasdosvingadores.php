@@ -35,9 +35,40 @@ session_start();
             </tr>
 
             <div style="position:absolute; right:20px; top:20px;">
-            <a href="login.php" class="btn btn-light btn-sm">Login</a>
-            <a href="cadastro.php" class="btn btn-danger btn-sm">Cadastro</a>
-            </div>
+
+            <?php if (!isset($_SESSION['user'])): ?>
+
+    <a href="login.php" class="btn btn-light btn-sm">Login</a>
+    <a href="cadastro.php" class="btn btn-warning btn-sm">Cadastro</a>
+
+<?php else: ?>
+
+    <?php if ($_SESSION['user']['tipo'] == 'admin'): ?>
+        <img src="admin.png" width="25">
+    <?php else: ?>
+        <img src="user.png" width="25">
+    <?php endif; ?>
+
+    <span style="color:white; margin: 0 10px;">
+        <?= $_SESSION['user']['username'] ?>
+    </span>
+
+    <?php if ($_SESSION['user']['tipo'] == 'admin'): ?>
+        <a href="dashboard.php" class="btn btn-warning btn-sm">Dashboard</a>
+
+        <?php else: ?>
+
+        <a href="lidos.php" class="btn btn-primary btn-sm">
+            Quadrinhos Lidos
+        </a>
+
+    <?php endif; ?>
+
+    <a href="logout.php" class="btn btn-danger btn-sm">
+        Sair
+    </a>
+
+<?php endif; ?>
 
             <tr>
                 <td style="text-align: center; font-size: 30px; padding: 10px;">
@@ -66,7 +97,7 @@ session_start();
 
             
             <div class="col-md-6 mb-4">
-                <a href="sagasprevingadores.php" class="vingadores-link">
+                <a href="sagas_fase.php?fase=PRÉ FORMAÇÃO&universo=vingadores" class="vingadores-link">
                     <div class="vingadores-card" style="background-image: url('sagasbanner/sagapre.jpg');">
                         <div class="overlay">
                             <h1>PRÉ FORMAÇÃO</h1>
@@ -77,7 +108,7 @@ session_start();
 
            
             <div class="col-md-6 mb-4">
-                <a href="sagasposvingadores.php" class="vingadores-link">
+                <a href="sagas_fase.php?fase=PÓS FORMAÇÃO&universo=vingadores" class="vingadores-link">
                     <div class="vingadores-card" style="background-image: url('sagasbanner/sagapos.jpg');">
                         <div class="overlay">
                             <h1>PÓS FORMAÇÃO</h1>
@@ -87,7 +118,7 @@ session_start();
             </div>
 
             <div class="col-md-6 mb-4">
-                <a href="sagaclassica.php" class="vingadores-link">
+                <a href="sagas_fase.php?fase=ERA CLASSICA&universo=vingadores" class="vingadores-link">
                     <div class="vingadores-card" style="background-image: url('sagasbanner/sagaclassica.webp');">
                         <div class="overlay">
                             <h1>ERA CLASSICA</h1>
@@ -97,7 +128,7 @@ session_start();
             </div>
 
             <div class="col-md-6 mb-4">
-                <a href="sagaqueda.html" class="vingadores-link">
+                <a href="sagas_fase.php?fase=A QUEDA&universo=vingadores" class="vingadores-link">
                     <div class="vingadores-card" style="background-image: url('sagasbanner/sagaqueda.jpg');">
                         <div class="overlay">
                             <h1>A QUEDA</h1>
@@ -107,7 +138,7 @@ session_start();
             </div>
 
             <div class="col-md-6 mb-4">
-                <a href="sagaguerrassecretas.php" class="vingadores-link">
+                <a href="sagas_fase.php?fase= GUERRAS SECRETAS&universo=vingadores" class="vingadores-link">
                     <div class="vingadores-card" style="background-image: url('sagasbanner/sagaguerra.jpeg');">
                         <div class="overlay">
                             <h1>GUERRAS SECRETAS</h1>
@@ -117,7 +148,7 @@ session_start();
             </div>
 
             <div class="col-md-6 mb-4">
-                <a href="sagaallnew.php" class="vingadores-link">
+                <a href="sagas_fase.php?fase=NOVA MARVEL&universo=vingadores" class="vingadores-link">
                     <div class="vingadores-card" style="background-image: url('sagasbanner/sagaallnew.jpg');">
                         <div class="overlay">
                             <h1>NOVA MARVEL</h1>

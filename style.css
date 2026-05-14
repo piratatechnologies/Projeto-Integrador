@@ -186,7 +186,8 @@ body{
 
 
 
-.barra-direita{
+.barra-esquerda,
+.barra-direita {
     position: fixed;
     top: 0;
     width: 40px;
@@ -199,11 +200,11 @@ body{
     z-index: -1; 
 }
 
-.barra-esquerda{
+.barra-esquerda {
     left: 0;
 }
 
-.barra-direita{
+.barra-direita {
     right: 0;
 }
 
@@ -212,5 +213,9 @@ body{
     color: white;               
     font-weight: bold;
     border-top: 4px solid #dc3545; 
+}
+
+.col-md-8 {
+    text-align: left;
 }
 

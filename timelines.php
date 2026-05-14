@@ -52,9 +52,18 @@ session_start();
 
     <?php if ($_SESSION['user']['tipo'] == 'admin'): ?>
         <a href="dashboard.php" class="btn btn-warning btn-sm">Dashboard</a>
+
+        <?php else: ?>
+
+        <a href="lidos.php" class="btn btn-primary btn-sm">
+            Quadrinhos Lidos
+        </a>
+
     <?php endif; ?>
 
-    <a href="logout.php" class="btn btn-danger btn-sm">Sair</a>
+    <a href="logout.php" class="btn btn-danger btn-sm">
+        Sair
+    </a>
 
 <?php endif; ?>
 

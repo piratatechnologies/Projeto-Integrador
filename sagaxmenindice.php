@@ -31,9 +31,40 @@ session_start();
             </tr>
 
             <div style="position:absolute; right:20px; top:20px;">
-            <a href="login.php" class="btn btn-light btn-sm">Login</a>
-            <a href="cadastro.php" class="btn btn-danger btn-sm">Cadastro</a>
-            </div>
+
+            <?php if (!isset($_SESSION['user'])): ?>
+
+    <a href="login.php" class="btn btn-light btn-sm">Login</a>
+    <a href="cadastro.php" class="btn btn-warning btn-sm">Cadastro</a>
+
+<?php else: ?>
+
+    <?php if ($_SESSION['user']['tipo'] == 'admin'): ?>
+        <img src="admin.png" width="25">
+    <?php else: ?>
+        <img src="user.png" width="25">
+    <?php endif; ?>
+
+    <span style="color:white; margin: 0 10px;">
+        <?= $_SESSION['user']['username'] ?>
+    </span>
+
+    <?php if ($_SESSION['user']['tipo'] == 'admin'): ?>
+        <a href="dashboard.php" class="btn btn-warning btn-sm">Dashboard</a>
+
+        <?php else: ?>
+
+        <a href="lidos.php" class="btn btn-primary btn-sm">
+            Quadrinhos Lidos
+        </a>
+
+    <?php endif; ?>
+
+    <a href="logout.php" class="btn btn-danger btn-sm">
+        Sair
+    </a>
+
+<?php endif; ?>
 
             <tr>
                 <td style="text-align: center; font-size: 30px; padding: 10px;">
@@ -62,7 +93,7 @@ session_start();
 
             
             <div class="col-md-6 mb-4">
-                <a href="sagas_fase.php?fase=primeira classe&universo=xmen" class="vingadores-link">
+                <a href="sagas_fase.php?fase=PRIMEIRA CLASSE&universo=xmen" class="vingadores-link">
                     <div class="vingadores-card" style="background-image: url('sagasbanner/sagaxprime.jpg');">
                         <div class="overlay">
                             <h1>PRIMEIRA CLASSE</h1>
@@ -73,7 +104,7 @@ session_start();
 
            
             <div class="col-md-6 mb-4">
-                <a href="sagasposvingadores.html" class="vingadores-link">
+                <a href="sagas_fase.php?fase=SEGUNDA GÊNESE&universo=xmen" class="vingadores-link">
                     <div class="vingadores-card" style="background-image: url('sagasbanner/sagaxsegunda.jpg');">
                         <div class="overlay">
                             <h1>SEGUNDA GÊNESE</h1>
@@ -83,7 +114,7 @@ session_start();
             </div>
 
             <div class="col-md-6 mb-4">
-                <a href="sagavmod.html" class="vingadores-link">
+                <a href="sagas_fase.php?fase=AZUL E DOURADO&universo=xmen" class="vingadores-link">
                     <div class="vingadores-card" style="background-image: url('sagasbanner/sagaxgold.jpg');">
                         <div class="overlay">
                             <h1>AZUL E DOURADO</h1>
@@ -93,7 +124,7 @@ session_start();
             </div>
 
             <div class="col-md-6 mb-4">
-                <a href="sagavmod.html" class="vingadores-link">
+                <a href="sagas_fase.php?fase=DIZIMADOS&universo=xmen" class="vingadores-link">
                     <div class="vingadores-card" style="background-image: url('sagasbanner/sagaxdiz.webp');">
                         <div class="overlay">
                             <h1>DIZIMADOS</h1>
@@ -103,7 +134,7 @@ session_start();
             </div>
 
             <div class="col-md-6 mb-4">
-                <a href="sagavmod.html" class="vingadores-link">
+                <a href="sagas_fase.php?fase=CISMA&universo=xmen" class="vingadores-link">
                     <div class="vingadores-card" style="background-image: url('sagasbanner/sagaxcisma.webp');">
                         <div class="overlay">
                             <h1>CISMA</h1>
@@ -113,7 +144,7 @@ session_start();
             </div>
 
             <div class="col-md-6 mb-4">
-                <a href="sagaallnew.html" class="vingadores-link">
+                <a href="sagas_fase.php?fase=ERA KRAKOA&universo=xmen" class="vingadores-link">
                     <div class="vingadores-card" style="background-image: url('sagasbanner/sagaxkrakoa.webp');">
                         <div class="overlay">
                             <h1>ERA KRAKOA</h1>
